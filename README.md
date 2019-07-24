@@ -6,7 +6,7 @@ There are two 'branches' or versions of the code in this repository.  One branch
 
 # How to get the code? 
 1. The simplest way to get the code is to click the green 'Clone or download' button on on the top right corner of the 'master' branch GitHub page, then download the code entirely.  
-[Download the Code](https://github.com/blasphemousjohn/rvg-bot-3/tree/master/Tutorial-Files/download.jpg)
+![Download the Code](https://github.com/blasphemousjohn/rvg-bot-3/tree/master/Tutorial-Files/download.jpg)
 2. You can now make any changes to any part of the code you need. 
 
 # Uploading the code
