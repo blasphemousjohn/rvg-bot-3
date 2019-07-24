@@ -1,0 +1,4 @@
+The package.json file should install these automatically on HEROKU only--
+npm install discord.js
+
+Token is stored in an environment variable .env as BOT_TOKEN.  SET THIS VALUE IN HEROKU --> SETTINGS --> CONFIG VARIABLES as Key = BOT_TOKEN, Value = {PUT KEY HERE}  
