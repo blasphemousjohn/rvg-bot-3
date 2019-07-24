@@ -69,16 +69,16 @@ client.on('message', msg => {
   //Set this value for a percent chance.  Eg. 9 is 10%, 4 is 20%, 3 is 25%, 1 is 50%
   percentChance = 4;
   chanceOfOutburst = getRandomInt(percentChance);
-  console.log(chanceOfOutburst);
+  console.log('Chance of outburst '+chanceOfOutburst);
   //Performs outburst test
 
   if (chanceOfOutburst == (percentChance - 1)) {  
     //Provides a more realistic respose time instead of being instant.  Set to 1.5 seconds.
     sleep(1500);
-    var chooser = getRandomInt(cannedOutburst.length + 1);
+    chooser = getRandomInt(cannedOutburst.length);
     //Ensures it's not the bots own message to respond to.
     if (msg.author.id != client.user.id) { 
-      console.log(chooser);
+      console.log('Chooser '+chooser);
       //Sends an outburst based on whoever sent the message.
       msg.channel.send('<@' + msg.author.id + '>, '+cannedOutburst[chooser]+'.')
     }
@@ -151,6 +151,7 @@ function sleep(milliseconds) {
 
 
 var cannedOutburst = ['you suck', 'I hate you','you mom cant even look at you, loser','fuck you','is trash','is garbage'];
+var chooser = 0;
 
 
 //-----------------------------------------------------------------------------
