@@ -78,6 +78,7 @@ client.on('message', msg => {
     var chooser = getRandomInt(cannedOutburst.length + 1);
     //Ensures it's not the bots own message to respond to.
     if (msg.author.id != client.user.id) { 
+      console.log(chooser);
       //Sends an outburst based on whoever sent the message.
       msg.channel.send('<@' + msg.author.id + '>, '+cannedOutburst[chooser]+'.')
     }
