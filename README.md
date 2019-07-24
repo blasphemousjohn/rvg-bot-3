@@ -5,12 +5,12 @@ Node.js version of the RVG bot.
 There are two 'branches' or versions of the code in this repository.  One branch is the master, the other is the working branch.  We will, for the most part, use the working branch to create / upload new files, and then create a pull request to bring these files into the master.  The 'master' branch is basically our source for all our files... an easy way to think of it is **download** from the master, **upload** to the working.  
 
 # How to get the code? 
-1. The simplest way to get the code is to click the green 'Clone or download' button on on the top right corner of the 'master' branch GitHub page.  
-[Download the Code]()
-2. Use the download option.  You will now have a .zip file with all the source code and can make any edits as you please... 
+1. The simplest way to get the code is to click the green 'Clone or download' button on on the top right corner of the 'master' branch GitHub page, then download the code entirely.  
+[Download the Code](https://github.com/blasphemousjohn/rvg-bot-3/tree/master/Tutorial-Files/download.jpg)
+2. You can now make any changes to any part of the code you need. 
 
-# Updating the master file... WIP
-1. After you have made changes to the source code, you can upload the files (ensure any files existing in the repo have the same exact name as when you downloaded them, eg. don't change file names!).  
+# Uploading the code
+1. After you have made changes to the source code, you can upload the files to the **Working** branch (ensure any files existing in the repo have the same exact name as when you downloaded them, eg. don't change file names!).    
 2. STEP TO BE ADDED
 
 # Tutorial links below: 
