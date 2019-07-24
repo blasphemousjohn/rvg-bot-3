@@ -29,11 +29,8 @@
    \ \_______\ \__\ \__\ \__\    \ \__\ \_______\____\_\  \              
     \|_______|\|__|\|__|\|__|     \|__|\|_______|\_________\             
                                                 \|_________|
-
 Welcome to Murr bot, a savage bot based around causeing havok in the discord.  The goal with this app is to create a responsive, reactive AI with different moods based on what users are talking about in the Discord.  There is no 'prefixes' for this bot, as it is meant to be a complete AI setup and recognize when users are talking about it.  
-
 All credits to xeisx and Blasphemousjohn.
-
 There are many comments in this code, used to distinguish what does what.  The format is as follows: 
 1. COMMENT REFERENCING CODE (ex. Line 42)
 2. CODE (ex. Line 43)
@@ -109,7 +106,8 @@ client.on('message', msg => {
         msg.channel.fetchMessages()
           .then(messages => {
             msg.channel.bulkDelete(messages);
-            messagesDeleted = messages.array().length; // number of messages deleted
+            //number of messages deleted
+            messagesDeleted = messages.array().length; 
 
             // Logging the number of messages deleted on both the channel and console.
             msg.channel.sendMessage("Deletion of "+messagesDeleted+' shitty messages succesful.');
@@ -129,10 +127,19 @@ client.on('message', msg => {
 //-----------------------------------------------------------------------------
 
 
-function getRandomInt(max) { //Input a maximum return val.  Eg. 10 could be 0-9 (10 ints).
+//Input a maximum return val.  Eg. 10 could be 0-9 (10 ints).
+function getRandomInt(max) { 
   return Math.floor(Math.random() * Math.floor(max));
 }
-
+//Mimics the sleep function of other languages, in milliseconds
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
 
 //-----------------------------------------------------------------------------
 //PROCESS INITIATION, starts the app.
