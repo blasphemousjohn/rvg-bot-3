@@ -20,4 +20,6 @@ https://help.github.com/en/articles/about-collaborative-development-models -- NO
 
 https://www.codementor.io/garethdwyer/building-a-discord-bot-with-node-js-and-repl-it-mm46r1u8y
 
+https://thomlom.dev/create-a-discord-bot-under-15-minutes/
+
  -- Note that this tutorial isn't exactly what we will do, and we won't be hosting it off repl.it due to privacy reasons.
