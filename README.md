@@ -1,5 +1,5 @@
 # RVG-BOT-3
-Node.js version of the RVG bot.
+Node.js version of the RVG bot, and introduction to GitHub.
 
 # Working with Branches...
 There are two 'branches' or versions of the code in this repository.  One branch is the master, the other is the working branch.  We will, for the most part, use the working branch to create / upload new files, and then create a pull request to bring these files into the master.  The 'master' branch is basically our source for all our files... an easy way to think of it is **download** from the master, **upload** to the working.  
