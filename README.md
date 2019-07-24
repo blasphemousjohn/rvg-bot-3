@@ -25,6 +25,9 @@ Create your app on heroku and give it a name.  Link it to the GitHub repository 
 2. Heroku doesn't need any .env dependencies as I've left them out of the code here.  It instead has it's own solution which is quite helpful, called Config Variables!  This can be found in your apps settings on heroku --> config vars. See the code for more information as I've added a readme on the creation of this.
 ![Config Vars](https://raw.githubusercontent.com/blasphemousjohn/rvg-bot-3/master/Tutorial-Files/key_goes_here.JPG)
 
+# Working with the project in Repl.it
+The project works surprisingly well with Repl.it.  All you have to do is copy the index.js raw code into a new index.js file in repl.it, and you can edit and even test it there!  
+
 # Tutorial links below: 
 https://help.github.com/en/articles/about-pull-requests
 
