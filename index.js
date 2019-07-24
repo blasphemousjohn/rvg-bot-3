@@ -73,10 +73,13 @@ client.on('message', msg => {
   //Performs outburst test
 
   if (chanceOfOutburst == (percentChance - 1)) {  
+    //Provides a more realistic respose time instead of being instant.  Set to 1.5 seconds.
+    sleep(1500);
+    var chooser = getRandomInt(cannedOutburst.length + 1);
     //Ensures it's not the bots own message to respond to.
     if (msg.author.id != client.user.id) { 
       //Sends an outburst based on whoever sent the message.
-      msg.channel.send('<@' + msg.author.id + '>, you suck.')
+      msg.channel.send('<@' + msg.author.id + '>, '+cannedOutburst[chooser]+'.')
     }
   }
 
@@ -140,6 +143,14 @@ function sleep(milliseconds) {
     }
   }
 }
+
+//-----------------------------------------------------------------------------
+//BACKEND POOL, variables / arrays for AI choice
+//-----------------------------------------------------------------------------
+
+
+var cannedOutburst = ['you suck', 'I hate you','you mom cant even look at you, loser','fuck you','is trash','is garbage'];
+
 
 //-----------------------------------------------------------------------------
 //PROCESS INITIATION, starts the app.
