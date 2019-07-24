@@ -42,7 +42,6 @@ There are many comments in this code, used to distinguish what does what.  The f
 -----------------------------------------------------------------------------*/
 
 
-require('dotenv').config()
 const Discord = require('discord.js');
 //Variable defining what the bot is called in the script (Discord.Client() creates the instance of the bot)
 const client = new Discord.Client();
