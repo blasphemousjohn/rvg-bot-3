@@ -14,6 +14,8 @@ There are two 'branches' or versions of the code in this repository.  One branch
 2. STEP TO BE ADDED
 
 # Tutorial links below: 
+https://help.github.com/en/articles/about-pull-requests
+https://help.github.com/en/articles/about-collaborative-development-models -- NOTE: We are using the 'Shared' development method.
 https://www.codementor.io/garethdwyer/building-a-discord-bot-with-node-js-and-repl-it-mm46r1u8y
 
  -- Note that this tutorial isn't exactly what we will do, and we won't be hosting it off repl.it due to privacy reasons.
