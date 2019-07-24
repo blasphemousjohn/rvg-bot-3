@@ -22,4 +22,6 @@ https://www.codementor.io/garethdwyer/building-a-discord-bot-with-node-js-and-re
 
 https://thomlom.dev/create-a-discord-bot-under-15-minutes/
 
+https://devcenter.heroku.com/articles/config-vars
+
  -- Note that this tutorial isn't exactly what we will do, and we won't be hosting it off repl.it due to privacy reasons.
