@@ -87,12 +87,14 @@ client.on('message', msg => {
     msg.channel.send(`Your shitty server is lagging! 💩💩 \`${client.pings[0]}ms\``);
   }
   
-  //Some specific responses to things users say
-  if (msg.content.startsWith ("Wow")) {
-    msg.channel.send ("Wow, you're easy to impress aren't you?");
-  }
-  if (msg.content.toLowerCase().startsWith == "I'm Sorry" || msg.content.toLowerCase().startsWith == "Sorry" || msg.content.toLowerCase().startsWith == "My bad" || msg.content.toLowerCase().startsWith == "Sorry" || msg.content.toLowerCase().startsWith == "Im sorry") {
-    msg.channel.send ("No, no, no, I'm sorry I can't remove you.");
+  if (msg.author.id != client.user.id) {
+    //Some specific responses to things users say
+    if (msg.content.startsWith ("Wow")) {
+      msg.channel.send ("Wow, you're easy to impress aren't you?");
+    }
+    if (msg.content.toLowerCase().startsWith == "I'm Sorry" || msg.content.toLowerCase().startsWith == "Sorry" || msg.content.toLowerCase().startsWith == "My bad" || msg.content.toLowerCase().startsWith == "Sorry" || msg.content.toLowerCase().startsWith == "Im sorry") {
+      msg.channel.send ("No, no, no, I'm sorry I can't remove you.");
+    }
   }
   
   if (msg.content == 'Murr, clear messages') {
