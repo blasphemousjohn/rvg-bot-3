@@ -125,6 +125,14 @@ client.on('message', msg => {
   }
 });
 
+//Some specific responses to things users say
+if (message.content.startsWith ("Wow")) {
+  message.channel.send ("Wow, you're easy to impress aren't you?")
+}
+if (message.content.toLowerCase().startsWith == "I'm Sorry" || message.content.toLowerCase().startsWith == "Sorry" || message.content.toLowerCase().startsWith == "My bad" || message.content.toLowerCase().startsWith == "Sorry" || message.content.toLowerCase().startsWith == "Im sorry")
+  message.channel.send ("No, no, no, I'm sorry I can't remove you.")
+}
+
 
 //-----------------------------------------------------------------------------
 //BACKEND FUNCTIONS, includes custom functions ran in the background for the bot AI.
@@ -150,7 +158,7 @@ function sleep(milliseconds) {
 //-----------------------------------------------------------------------------
 
 
-var cannedOutburst = ['you suck', 'I hate you','you mom cant even look at you, loser','fuck you','is trash','is garbage'];
+var cannedOutburst = ['you suck', 'I hate you', 'your mom can not even look at you, loser', 'fuck you', 'is trash', 'is garbage', 'is unloved and should stop trying', 'needs to get a life', 'smells like ass and doritos', 'why do you even try? This is sad'];
 var chooser = 0;
 
 
