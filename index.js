@@ -127,10 +127,10 @@ client.on('message', msg => {
 
 //Some specific responses to things users say
 if (message.content.startsWith ("Wow")) {
-  message.channel.send ("Wow, you're easy to impress aren't you?")
+  message.channel.send ("Wow, you're easy to impress aren't you?");
 }
-if (message.content.toLowerCase().startsWith == "I'm Sorry" || message.content.toLowerCase().startsWith == "Sorry" || message.content.toLowerCase().startsWith == "My bad" || message.content.toLowerCase().startsWith == "Sorry" || message.content.toLowerCase().startsWith == "Im sorry")
-  message.channel.send ("No, no, no, I'm sorry I can't remove you.")
+if (message.content.toLowerCase().startsWith == "I'm Sorry" || message.content.toLowerCase().startsWith == "Sorry" || message.content.toLowerCase().startsWith == "My bad" || message.content.toLowerCase().startsWith == "Sorry" || message.content.toLowerCase().startsWith == "Im sorry") {
+  message.channel.send ("No, no, no, I'm sorry I can't remove you.");
 }
 
 
