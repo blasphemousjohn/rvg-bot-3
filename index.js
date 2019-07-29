@@ -77,11 +77,11 @@ client.on('message', msg => {
   //Allows the user to check how Murr is feelin'
   if (msg.content == 'Murr, how ya feelin?') {
     if (set_emotion_state == 'lonely') {
-      msg.channel.send('I\'m actually.. very lonely right now (╥﹏╥)' + emotion_lvl);
+      msg.channel.send('I\'m actually.. very lonely right now (╥﹏╥)');
     } else if (set_emotion_state == 'neutral') {
-      msg.channel.send('Meh' + emotion_lvl);
+      msg.channel.send('Meh');
     } else if (set_emotion_state == 'angry') {
-      msg.channel.send('I\'m so fucking pissed right now!🤪🤬😤' + emotion_lvl);
+      msg.channel.send('I\'m so fucking pissed right now!🤪🤬😤');
     }
   }
   //Resets emotions to neutral
