@@ -212,7 +212,7 @@ var cannedOutburst = ['you suck', 'I hate you', 'your mom can not even look at y
 //Must include the gi at the end, in the case that there are multiple of these words per message.  This is RegEx formatting (required here).
 var upsettingWords = [/garbage/g,/fuk/g,/fk/g,/fuc/g,/ mad /g,/sht/g,/shitty/g,/shit/g,/shtty/g,/ass/g,/ f u /g,/trash /g,/hate/g,/loser/g];
 var upsettingWords_txt = ['garbage','fuk','fk','fuc',' mad ','sht','shitty','shit','shtty','ass',' f u ','trash ','hate','loser'];
-var upsettingWords_count = upsettingWords.array().length;
+var upsettingWords_count = upsettingWords.length;
 var chooser = 0;
 
 
