@@ -55,7 +55,7 @@ client.on('ready',() => {
   //Prints to Compiler / IDE console.
   console.log(client.user.username + ' bot initialized.'); 
   //Sets the bot's 'playing' status.
-  client.user.setActivity('the role of resident asshole.') 
+  client.user.setActivity('the role of resident asshole.'); 
   //Sets active channel for initial greeting
   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   /*const channel = find(ch => ch.name === 'news-announcements'); 
@@ -67,8 +67,7 @@ client.on('ready',() => {
 //When anyone sends a message...
 client.on('message', msg => { 
   //Set this value for a percent chance.  Eg. 9 is 10%, 4 is 20%, 3 is 25%, 1 is 50%
-  percentChance = 4;
-  chanceOfOutburst = getRandomInt(percentChance);
+  var chanceOfOutburst = getRandomInt(percentChance);
   console.log('Chance of outburst '+chanceOfOutburst);
   //Performs outburst test
 
@@ -80,12 +79,22 @@ client.on('message', msg => {
     if (msg.author.id != client.user.id) { 
       console.log('Chooser '+chooser);
       //Sends an outburst based on whoever sent the message.
-      msg.channel.send('<@' + msg.author.id + '>, '+cannedOutburst[chooser]+'.')
+      msg.channel.send('<@' + msg.author.id + '>, '+cannedOutburst[chooser]+'.');
     }
   }
 
   if (msg.content == "Murr ping!") {
-    msg.channel.send(`Your shitty server is lagging! 💩💩 \`${client.pings[0]}ms\``)
+    msg.channel.send(`Your shitty server is lagging! 💩💩 \`${client.pings[0]}ms\``);
+  }
+  
+  if (msg.author.id != client.user.id) {
+    //Some specific responses to things users say
+    if (msg.content.startsWith ("Wow")) {
+      msg.channel.send ("Wow, you're easy to impress aren't you?");
+    }
+    if (msg.content.toLowerCase().startsWith == "I'm Sorry" || msg.content.toLowerCase().startsWith == "Sorry" || msg.content.toLowerCase().startsWith == "My bad" || msg.content.toLowerCase().startsWith == "Sorry" || msg.content.toLowerCase().startsWith == "Im sorry") {
+      msg.channel.send ("No, no, no, I'm sorry I can't remove you.");
+    }
   }
   
   if (msg.content == 'Murr, clear messages') {
@@ -111,11 +120,11 @@ client.on('message', msg => {
           .then(messages => {
             msg.channel.bulkDelete(messages);
             //number of messages deleted
-            messagesDeleted = messages.array().length; 
+            var messagesDeleted = messages.array().length; 
 
             // Logging the number of messages deleted on both the channel and console.
             msg.channel.sendMessage("Deletion of "+messagesDeleted+' shitty messages succesful.');
-            console.log('Deletion of messages successful. Total messages deleted: '+messagesDeleted)
+            console.log('Deletion of messages successful. Total messages deleted: '+messagesDeleted);
           })
           .catch(err => {
             console.log('These messages suck so bad I cant even delete them.');
@@ -149,8 +158,9 @@ function sleep(milliseconds) {
 //BACKEND POOL, variables / arrays for AI choice
 //-----------------------------------------------------------------------------
 
-
-var cannedOutburst = ['you suck', 'I hate you','you mom cant even look at you, loser','fuck you','is trash','is garbage'];
+//Sets chance of an outburst at ANY message sent.
+percentChance = 4;
+var cannedOutburst = ['you suck', 'I hate you', 'your mom can not even look at you, loser', 'fuck you', 'is trash', 'is garbage', 'is unloved and should stop trying', 'needs to get a life', 'smells like ass and doritos', 'why do you even try? This is sad'];
 var chooser = 0;
 
 
