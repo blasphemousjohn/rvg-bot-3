@@ -66,7 +66,29 @@ client.on('ready',() => {
 
 //When anyone sends a message...
 client.on('message', msg => { 
-  //Set this value for a percent chance.  Eg. 9 is 10%, 4 is 20%, 3 is 25%, 1 is 50%
+  //On new message event sets emotion
+  emotion(emotion_lvl);
+  //Adds emotional responses
+  for (var i = 0; i <= upsettingWords_count; i++) {
+    if (msg.content.toLowerCase().match(upsettingWords[i]) == upsettingWords_txt[i]) {
+      emotion_lvl = emotion_lvl + 1;
+    }
+  }
+  //Allows the user to check how Murr is feelin'
+  if (msg.content == 'Murr, how ya feelin?') {
+    if (set_emotion_state == 'lonely') {
+      msg.channel.send('I\'m actually.. very lonely right now (╥﹏╥)');
+    } else if (set_emotion_state == 'neutral') {
+      msg.channel.send('Meh');
+    } else if (set_emotion_state == 'angry') {
+      msg.channel.send('I\'m so fucking pissed right now!🤪🤬😤');
+    }
+  }
+  //Resets emotions to neutral
+  if (msg.content == 'Murr, calm') {
+    msg.channel.send('Alright, I\'m calming down now buddy :)');
+    emotion_lvl = 4;
+  }
   var chanceOfOutburst = getRandomInt(percentChance);
   console.log('Chance of outburst '+chanceOfOutburst);
   //Performs outburst test
@@ -83,7 +105,7 @@ client.on('message', msg => {
     }
   }
 
-  if (msg.content == "Murr ping!") {
+  if (msg.content == "Murr, ping!") {
     msg.channel.send(`Your shitty server is lagging! 💩💩 \`${client.pings[0]}ms\``);
   }
   
@@ -153,14 +175,44 @@ function sleep(milliseconds) {
     }
   }
 }
+//Ensures emotion_lvl is in the proper range (based on 0-9 scale)
+function leveler() {
+  if (emotion_lvl > 9) {
+    emotion_lvl = 9;
+  } else if (emotion_lvl < 0) {
+    emotion_lvl = 0;
+  }
+}
+
+//Sets the emotion state (based on 0-9 scale)
+function emotion(lvl) {
+  leveler();
+  if (lvl < 3) {
+    set_emotion_state = 'lonely';
+    percentChance = 20;
+  } else if (lvl >=3 && lvl <= 5) {
+    set_emotion_state = 'neutral';
+    percentChance = 15;
+  } else if (lvl > 5) {
+    set_emotion_state = 'angry';
+    percentChance = 2;
+  }
+}
 
 //-----------------------------------------------------------------------------
 //BACKEND POOL, variables / arrays for AI choice
 //-----------------------------------------------------------------------------
 
-//Sets chance of an outburst at ANY message sent.
-percentChance = 4;
+var set_emotion_state;
+//0-9 scale of emotional level.  0-2 is lonely, 3-5 is neutral, 6-9 is angry.
+var emotion_lvl = 4;
+//Set this value for a percent chance.  Eg. 10 is 10%, 4 is 25%, 3 is 33.34%, 1 is 100% 
+var percentChance = 4;
 var cannedOutburst = ['you suck', 'I hate you', 'your mom can not even look at you, loser', 'fuck you', 'is trash', 'is garbage', 'is unloved and should stop trying', 'needs to get a life', 'smells like ass and doritos', 'why do you even try? This is sad'];
+//Must include the gi at the end, in the case that there are multiple of these words per message.  This is RegEx formatting (required here).
+var upsettingWords = [/garbage/g,/fuk/g,/fk/g,/fuc/g,/ mad /g,/sht/g,/shitty/g,/shit/g,/shtty/g,/ass/g,/ f u /g,/trash /g,/hate/g,/loser/g];
+var upsettingWords_txt = ['garbage','fuk','fk','fuc',' mad ','sht','shitty','shit','shtty','ass',' f u ','trash ','hate','loser'];
+var upsettingWords_count = upsettingWords.array().length;
 var chooser = 0;
 
 
