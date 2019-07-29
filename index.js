@@ -77,11 +77,11 @@ client.on('message', msg => {
   //Allows the user to check how Murr is feelin'
   if (msg.content == 'Murr, how ya feelin?') {
     if (set_emotion_state == 'lonely') {
-      msg.channel.send('I\'m actually.. very lonely right now (╥﹏╥)');
+      msg.channel.send('I\'m actually.. very lonely right now (╥﹏╥)' + emotion_lvl);
     } else if (set_emotion_state == 'neutral') {
-      msg.channel.send('Meh');
+      msg.channel.send('Meh' + emotion_lvl);
     } else if (set_emotion_state == 'angry') {
-      msg.channel.send('I\'m so fucking pissed right now!🤪🤬😤');
+      msg.channel.send('I\'m so fucking pissed right now!🤪🤬😤' + emotion_lvl);
     }
   }
   //Resets emotions to neutral
@@ -90,16 +90,13 @@ client.on('message', msg => {
     emotion_lvl = 4;
   }
   var chanceOfOutburst = getRandomInt(percentChance);
-  console.log('Chance of outburst '+chanceOfOutburst);
   //Performs outburst test
-
   if (chanceOfOutburst == (percentChance - 1)) {  
     //Provides a more realistic respose time instead of being instant.  Set to 1.5 seconds.
     sleep(1500);
     chooser = getRandomInt(cannedOutburst.length);
     //Ensures it's not the bots own message to respond to.
     if (msg.author.id != client.user.id) { 
-      console.log('Chooser '+chooser);
       //Sends an outburst based on whoever sent the message.
       msg.channel.send('<@' + msg.author.id + '>, '+cannedOutburst[chooser]+'.');
     }
