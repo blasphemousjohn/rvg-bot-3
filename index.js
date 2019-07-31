@@ -1,37 +1,37 @@
 /*---------------------------------------------------------------------------
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
- ________  ________  ________  ___  ___  _______                         
-|\   __  \|\   __  \|\   ____\|\  \|\  \|\  ___ \                        
-\ \  \|\  \ \  \|\  \ \  \___|\ \  \\\  \ \   __/|                       
- \ \   _  _\ \  \\\  \ \  \  __\ \  \\\  \ \  \_|/__                     
-  \ \  \\  \\ \  \\\  \ \  \|\  \ \  \\\  \ \  \_|\ \                    
-   \ \__\\ _\\ \_______\ \_______\ \_______\ \_______\                   
-    \|__|\|__|\|_______|\|_______|\|_______|\|_______|                   
-                                                                         
-                                                                         
-                                                                         
- ___      ___ ________  ___       ___       _______       ___    ___     
-|\  \    /  /|\   __  \|\  \     |\  \     |\  ___ \     |\  \  /  /|    
-\ \  \  /  / | \  \|\  \ \  \    \ \  \    \ \   __/|    \ \  \/  / /    
- \ \  \/  / / \ \   __  \ \  \    \ \  \    \ \  \_|/__   \ \    / /     
-  \ \    / /   \ \  \ \  \ \  \____\ \  \____\ \  \_|\ \   \/  /  /      
-   \ \__/ /     \ \__\ \__\ \_______\ \_______\ \_______\__/  / /        
-    \|__|/       \|__|\|__|\|_______|\|_______|\|_______|\___/ /         
-                                                        \|___|/          
-                                                                         
-                                                                         
- ________  ________  _____ ______   _______   ________                   
-|\   ____\|\   __  \|\   _ \  _   \|\  ___ \ |\   ____\                  
-\ \  \___|\ \  \|\  \ \  \\\__\ \  \ \   __/|\ \  \___|_                 
- \ \  \  __\ \   __  \ \  \\|__| \  \ \  \_|/_\ \_____  \                
-  \ \  \|\  \ \  \ \  \ \  \    \ \  \ \  \_|\ \|____|\  \               
-   \ \_______\ \__\ \__\ \__\    \ \__\ \_______\____\_\  \              
-    \|_______|\|__|\|__|\|__|     \|__|\|_______|\_________\             
+ ________  ________  ________  ___  ___  _______
+|\   __  \|\   __  \|\   ____\|\  \|\  \|\  ___ \
+\ \  \|\  \ \  \|\  \ \  \___|\ \  \\\  \ \   __/|
+ \ \   _  _\ \  \\\  \ \  \  __\ \  \\\  \ \  \_|/__
+  \ \  \\  \\ \  \\\  \ \  \|\  \ \  \\\  \ \  \_|\ \
+   \ \__\\ _\\ \_______\ \_______\ \_______\ \_______\
+    \|__|\|__|\|_______|\|_______|\|_______|\|_______|
+
+
+
+ ___      ___ ________  ___       ___       _______       ___    ___
+|\  \    /  /|\   __  \|\  \     |\  \     |\  ___ \     |\  \  /  /|
+\ \  \  /  / | \  \|\  \ \  \    \ \  \    \ \   __/|    \ \  \/  / /
+ \ \  \/  / / \ \   __  \ \  \    \ \  \    \ \  \_|/__   \ \    / /
+  \ \    / /   \ \  \ \  \ \  \____\ \  \____\ \  \_|\ \   \/  /  /
+   \ \__/ /     \ \__\ \__\ \_______\ \_______\ \_______\__/  / /
+    \|__|/       \|__|\|__|\|_______|\|_______|\|_______|\___/ /
+                                                        \|___|/
+
+
+ ________  ________  _____ ______   _______   ________
+|\   ____\|\   __  \|\   _ \  _   \|\  ___ \ |\   ____\
+\ \  \___|\ \  \|\  \ \  \\\__\ \  \ \   __/|\ \  \___|_
+ \ \  \  __\ \   __  \ \  \\|__| \  \ \  \_|/_\ \_____  \
+  \ \  \|\  \ \  \ \  \ \  \    \ \  \ \  \_|\ \|____|\  \
+   \ \_______\ \__\ \__\ \__\    \ \__\ \_______\____\_\  \
+    \|_______|\|__|\|__|\|__|     \|__|\|_______|\_________\
                                                 \|_________|
-Welcome to Murr bot, a savage bot based around causeing havok in the discord.  The goal with this app is to create a responsive, reactive AI with different moods based on what users are talking about in the Discord.  There is no 'prefixes' for this bot, as it is meant to be a complete AI setup and recognize when users are talking about it.  
+Welcome to Murr bot, a savage bot based around causeing havok in the discord.  The goal with this app is to create a responsive, reactive AI with different moods based on what users are talking about in the Discord.  There is no 'prefixes' for this bot, as it is meant to be a complete AI setup and recognize when users are talking about it.
 All credits to xeisx and Blasphemousjohn.
-There are many comments in this code, used to distinguish what does what.  The format is as follows: 
+There are many comments in this code, used to distinguish what does what.  The format is as follows:
 1. COMMENT REFERENCING CODE (ex. Line 42)
 2. CODE (ex. Line 43)
 -----------------------------------------------------------------------------
@@ -53,19 +53,19 @@ const token = process.env.BOT_TOKEN;
 //When the bot starts running.
 client.on('ready',() => {
   //Prints to Compiler / IDE console.
-  console.log(client.user.username + ' bot initialized.'); 
+  console.log(client.user.username + ' bot initialized.');
   //Sets the bot's 'playing' status.
-  client.user.setActivity('the role of resident asshole.'); 
+  client.user.setActivity('the role of resident asshole.');
   //Sets active channel for initial greeting
   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  /*const channel = find(ch => ch.name === 'news-announcements'); 
+  /*const channel = find(ch => ch.name === 'news-announcements');
   //Ignores if channel doesn't exist, prevents bot from breaking <-- NEEDS FIXING
   if (!channel) return;*/
   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 });
 
 //When anyone sends a message...
-client.on('message', msg => { 
+client.on('message', msg => {
   //On new message event sets emotion
   emotion(emotion_lvl);
   //Adds emotional responses
@@ -91,12 +91,12 @@ client.on('message', msg => {
   }
   var chanceOfOutburst = getRandomInt(percentChance);
   //Performs outburst test
-  if (chanceOfOutburst == (percentChance - 1)) {  
+  if (chanceOfOutburst == (percentChance - 1)) {
     //Provides a more realistic respose time instead of being instant.  Set to 1.5 seconds.
     sleep(1500);
     chooser = getRandomInt(cannedOutburst.length);
     //Ensures it's not the bots own message to respond to.
-    if (msg.author.id != client.user.id) { 
+    if (msg.author.id != client.user.id) {
       //Sends an outburst based on whoever sent the message.
       msg.channel.send('<@' + msg.author.id + '>, '+cannedOutburst[chooser]+'.');
     }
@@ -105,7 +105,7 @@ client.on('message', msg => {
   if (msg.content == "Murr, ping!") {
     msg.channel.send(`Your shitty server is lagging! 💩💩 \`${client.pings[0]}ms\``);
   }
-  
+
   if (msg.author.id != client.user.id) {
     //Some specific responses to things users say
     if (msg.content.startsWith ("Wow")) {
@@ -115,7 +115,7 @@ client.on('message', msg => {
       msg.channel.send ("No, no, no, I'm sorry I can't remove you.");
     }
   }
-  
+
   if (msg.content == 'Murr, clear messages') {
 
       // Check the following permissions before deleting messages:
@@ -139,7 +139,7 @@ client.on('message', msg => {
           .then(messages => {
             msg.channel.bulkDelete(messages);
             //number of messages deleted
-            var messagesDeleted = messages.array().length; 
+            var messagesDeleted = messages.array().length;
 
             // Logging the number of messages deleted on both the channel and console.
             msg.channel.sendMessage("Deletion of "+messagesDeleted+' shitty messages succesful.');
@@ -160,7 +160,7 @@ client.on('message', msg => {
 
 
 //Input a maximum return val.  Eg. 10 could be 0-9 (10 ints).
-function getRandomInt(max) { 
+function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 //Mimics the sleep function of other languages, in milliseconds
@@ -186,10 +186,10 @@ function emotion(lvl) {
   leveler();
   if (lvl < 3) {
     set_emotion_state = 'lonely';
-    percentChance = 20;
+    percentChance = 100;
   } else if (lvl >=3 && lvl <= 5) {
     set_emotion_state = 'neutral';
-    percentChance = 15;
+    percentChance = 50;
   } else if (lvl > 5) {
     set_emotion_state = 'angry';
     percentChance = 2;
@@ -203,12 +203,12 @@ function emotion(lvl) {
 var set_emotion_state;
 //0-9 scale of emotional level.  0-2 is lonely, 3-5 is neutral, 6-9 is angry.
 var emotion_lvl = 4;
-//Set this value for a percent chance.  Eg. 10 is 10%, 4 is 25%, 3 is 33.34%, 1 is 100% 
+//Set this value for a percent chance.  Eg. 10 is 10%, 4 is 25%, 3 is 33.34%, 1 is 100%
 var percentChance = 4;
 var cannedOutburst = ['you suck', 'I hate you', 'your mom can not even look at you, loser', 'fuck you', 'is trash', 'is garbage', 'is unloved and should stop trying', 'needs to get a life', 'smells like ass and doritos', 'why do you even try? This is sad'];
 //Must include the gi at the end, in the case that there are multiple of these words per message.  This is RegEx formatting (required here).
-var upsettingWords = [/garbage/g,/fuk/g,/fk/g,/fuc/g,/ mad /g,/sht/g,/shitty/g,/shit/g,/shtty/g,/ass/g,/ f u /g,/trash /g,/hate/g,/loser/g];
-var upsettingWords_txt = ['garbage','fuk','fk','fuc',' mad ','sht','shitty','shit','shtty','ass',' f u ','trash ','hate','loser'];
+var upsettingWords = [/garbage/g,/fuk/g,/fk/g,/fuc/g,/ mad /g,/sht/g,/shitty/g,/shit/g,/shtty/g,/ass/g,/ f u /g,/trash /g,/hate/g,/loser/g,/ suc /g,/suck/g,/ suk /g];
+var upsettingWords_txt = ['garbage','fuk','fk','fuc',' mad ','sht','shitty','shit','shtty','ass',' f u ','trash ','hate','loser',' suc ','suck',' suk '];
 var upsettingWords_count = upsettingWords.length;
 var chooser = 0;
 
